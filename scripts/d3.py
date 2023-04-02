@@ -16,9 +16,10 @@ def move():
     # twist.angular.z = 0
     
     travelledDistance = 1
-    straightDistance = 1
+    straightDistance = 10
+    straightDistance2 = 10
     speed = 1
-    t = 2.538
+    t = 2.54
 
     goal_rotate = math.pi
     i = 1
@@ -70,16 +71,41 @@ def move():
 
         while(i==3):
             while(straightDistance >= 0.0):
-                print('straight')
-                twist.linear.x = 1
+                sp = twist.linear.x = 1
                 twist.angular.z = 0
                 pub.publish(twist)
                 t3 = rospy.Time.now().to_sec()
                 elapsed = t3 - t0
-                distance = twist.linear.x * elapsed
-                straightDistance = straightDistance - distance
-
+                travelled = sp * elapsed
+                straightDistance = straightDistance - travelled
+                print(straightDistance, ' - ', travelled)
+                # t3 = rospy.Time.now().to_sec()
+                # elapsed = t3 - t0
+                # distance = twist.linear.x * elapsed
+                # straightDistance = straightDistance - distance
+                # print(distance)
                 if(straightDistance <= 0.0):
+                           
+                    i=4
+                    t0 = rospy.Time.now().to_sec()
+                    time.sleep(1)    
+
+        while(i==4):
+            while(straightDistance2 >= 0.0):
+                sp = twist.linear.x = 1
+                twist.angular.z = 0
+                pub.publish(twist)
+                t4 = rospy.Time.now().to_sec()
+                elapsed = t4 - t0
+                travelled = sp * elapsed
+                straightDistance2 = straightDistance - travelled
+                print(straightDistance, ' - ', travelled)
+                # t3 = rospy.Time.now().to_sec()
+                # elapsed = t3 - t0
+                # distance = twist.linear.x * elapsed
+                # straightDistance = straightDistance - distance
+                # print(distance)
+                if(straightDistance2 <= 0.0):
                     exit()
 
 
