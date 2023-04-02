@@ -44,7 +44,7 @@ def move():
                 rospy.sleep(0.1)
             
             if(travelledDistance < 0.0):
-                time.sleep(3)
+                time.sleep(1)
                 t0 = rospy.Time.now().to_sec()
                 i=2
                 #t0 = rospy.Time.now().to_sec()
@@ -65,7 +65,7 @@ def move():
                 rospy.sleep(0.1)
 
                 if(goal_rotate <= t):
-                    time.sleep(3)           
+                    time.sleep(1)           
                     i=3
                     t0 = rospy.Time.now().to_sec()
 
