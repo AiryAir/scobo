@@ -13,7 +13,6 @@ def move():
     
     angularSpeed = twist.angular.z = math.pi
     linearSpeed = twist.linear.x = math.pi
-    # twist.angular.z = 0
     
     travelledDistance = 1
     straightDistance = 10
