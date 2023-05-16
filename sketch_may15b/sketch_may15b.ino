@@ -12,41 +12,46 @@ float y = 0;
 float theta = 0;
 float linear = 0;
 float angular = 0;
-
-//void messageCb(const geometry_msgs::Twist& twist){
-//  
-//    demandx = twist.linear.x;
-//    demandz = twist.angular.z;
-//    
-//    if(demandx >= 0){
-//    digitalWrite(13,HIGH);
-//    }
-//    
-//    else {
-//    digitalWrite(13,LOW);
-//    }
-//    Serial.println(demandx);
-//
-//}
+int led = 0;
 
 void poseCb(const turtlesim::Pose& pose_msg){
   
-    x = pose_msg.x;
-    y = pose_msg.y;
-    theta = pose_msg.theta;
-    linear = pose_msg.linear_velocity;
-    angular = pose_msg.angular_velocity;
+  x = pose_msg.x;
+  y = pose_msg.y;
+  theta = pose_msg.theta;
+  linear = pose_msg.linear_velocity;
+  angular = pose_msg.angular_velocity;
 
-    if(linear!=0){
+  if(linear != 0 && angular == 0){
+    led = 1;
+  }
+  else if(linear == 0 && angular !=0){
+    led = 2;
+  }
+  else{
+    led = 3;
+  }
+
+  switch(led){
+    case 1:
       digitalWrite(13,HIGH);
-      //Serial.println(linear);
-    }
-    else {
+      digitalWrite(12,LOW);
+      break;
+           
+    case 2:
+      digitalWrite(12,HIGH);
       digitalWrite(13,LOW);
-    }
-    
-}
+      break;
 
+    case 3:
+      digitalWrite(13,LOW);
+      digitalWrite(12,LOW);
+      break;
+
+  }
+    
+  
+} 
 
 //ros::Subscriber<geometry_msgs::Twist> sub("/turtle1/cmd_vel", messageCb);
 ros::Subscriber<turtlesim::Pose> sub("/turtle1/pose", poseCb);
