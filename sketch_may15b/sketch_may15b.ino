@@ -41,16 +41,10 @@ void poseCb(const turtlesim::Pose& pose_msg){
       digitalWrite(13,HIGH);
       //Serial.println(linear);
     }
-    else if(linear==0){
-      digitalWrite(13,LOW);
-        
-    }
-    else if(angular!=0){
-      digitalWrite(13,HIGH);
-    }
-    else if(angular == 0){
+    else {
       digitalWrite(13,LOW);
     }
+    
 }
 
 
