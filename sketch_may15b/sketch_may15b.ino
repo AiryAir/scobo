@@ -14,6 +14,23 @@ float linear = 0;
 float angular = 0;
 int led = 0;
 
+
+//void messageCb(const geometry_msgs::Twist& twist){
+//  
+//    demandx = twist.linear.x;
+//    demandz = twist.angular.z;
+//    
+//    if(demandx >= 0){
+//    digitalWrite(13,HIGH);
+//    }
+//    
+//    else {
+//    digitalWrite(13,LOW);
+//    }
+//    Serial.println(demandx);
+//
+//}
+
 void poseCb(const turtlesim::Pose& pose_msg){
   
   x = pose_msg.x;
