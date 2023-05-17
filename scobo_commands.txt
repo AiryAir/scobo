@@ -1,0 +1,16 @@
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+rostopic info /cmd_vel
+rostopic echo /cmd_vel
+
+> rosrun turtlesim turtle_teleop_key
+
+> export TURTLEBOT3_MODEL=burger
+> roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/pratham/catkin_ws/src/scobo/nav/maps/workshop1.yaml
+
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+> roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+rosrun rosserial_arduino serial_node.py /dev/ttyACM0
