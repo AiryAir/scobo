@@ -13,7 +13,10 @@ float theta = 0;
 float linear = 0;
 float angular = 0;
 int led = 0;
-
+int red1 = 13;
+int red2 = 8;
+int blue = 6;
+int green = 12;
 
 //void messageCb(const geometry_msgs::Twist& twist){
 //  
@@ -39,32 +42,63 @@ void poseCb(const turtlesim::Pose& pose_msg){
   linear = pose_msg.linear_velocity;
   angular = pose_msg.angular_velocity;
 
-  if(linear != 0 && angular == 0){
+  if(linear == 0 && angular == 0){
     led = 1;
   }
-  else if(linear == 0 && angular !=0){
+  else if(linear > 0 && angular == 0){
     led = 2;
   }
-  else{
+  else if(linear < 0 && angular == 0){
     led = 3;
+  }
+  else if(linear == 0 && angular > 0){
+    led = 4;
+  }
+  else if(linear == 0 && angular < 0){
+    led = 5;
+  }
+  else{
+    led = 6;
   }
 
   switch(led){
     case 1:
-      digitalWrite(13,HIGH);
-      digitalWrite(12,LOW);
+      digitalWrite(red1,LOW);
+      digitalWrite(red2,LOW);
+      digitalWrite(blue,LOW);
+      digitalWrite(green,LOW);
       break;
            
     case 2:
-      digitalWrite(12,HIGH);
-      digitalWrite(13,LOW);
+      digitalWrite(red1,LOW);
+      digitalWrite(red2,LOW);
+      digitalWrite(blue,LOW);
+      digitalWrite(green,HIGH);
       break;
 
     case 3:
-      digitalWrite(13,LOW);
-      digitalWrite(12,LOW);
+      digitalWrite(red1,HIGH);
+      digitalWrite(red2,LOW);
+      digitalWrite(blue,LOW);
+      digitalWrite(green,LOW);
       break;
+      
+    case 4:
+      digitalWrite(red1,LOW);
+      digitalWrite(red2,LOW);
+      digitalWrite(blue,HIGH);
+      digitalWrite(green,LOW);
 
+    case 5:
+      digitalWrite(red1,LOW);
+      digitalWrite(red2,HIGH);
+      digitalWrite(blue,LOW);
+      digitalWrite(green,LOW);
+    case 6:
+      digitalWrite(red1,LOW);
+      digitalWrite(red2,HIGH);
+      digitalWrite(blue,LOW);
+      digitalWrite(green,LOW);
   }
     
   
