@@ -1,9 +1,7 @@
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
 #include <turtlesim/Pose.h>
-
 ros::NodeHandle nh;
-
 float demandx=0;
 float demandz=0;
 float x = 0;
@@ -13,13 +11,10 @@ float theta = 0;
 float linear = 0;
 float angular = 0;
 int led = 0;
-<<<<<<< HEAD
-int red1 = 13;
-int red2 = 8;
-int blue = 6;
-int green = 12;
+
 
 //void messageCb(const geometry_msgs::Twist& twist){
+
 //  
 //    demandx = twist.linear.x;
 //    demandz = twist.angular.z;
@@ -34,89 +29,51 @@ int green = 12;
 //    Serial.println(demandx);
 //
 //}
-=======
->>>>>>> parent of bf63d2a (Update sketch_may15b.ino)
 
 void poseCb(const turtlesim::Pose& pose_msg){
-  
+
   x = pose_msg.x;
   y = pose_msg.y;
   theta = pose_msg.theta;
   linear = pose_msg.linear_velocity;
   angular = pose_msg.angular_velocity;
-
-  if(linear == 0 && angular == 0){
+  
+  if(linear != 0 && angular == 0){
     led = 1;
   }
-  else if(linear > 0 && angular == 0){
+  else if(linear == 0 && angular !=0){
     led = 2;
   }
-  else if(linear < 0 && angular == 0){
+  else if(linear == 0 && angular == 0){
     led = 3;
   }
-  else if(linear == 0 && angular > 0){
-    led = 4;
-  }
-  else if(linear == 0 && angular < 0){
-    led = 5;
-  }
-  else{
-    led = 6;
-  }
-
   switch(led){
     case 1:
-      digitalWrite(red1,LOW);
-      digitalWrite(red2,LOW);
-      digitalWrite(blue,LOW);
-      digitalWrite(green,LOW);
+      digitalWrite(13,HIGH);
+      digitalWrite(12,LOW);
       break;
            
     case 2:
-      digitalWrite(red1,LOW);
-      digitalWrite(red2,LOW);
-      digitalWrite(blue,LOW);
-      digitalWrite(green,HIGH);
+      digitalWrite(12,HIGH);
+      digitalWrite(13,LOW);
       break;
-
     case 3:
-      digitalWrite(red1,HIGH);
-      digitalWrite(red2,LOW);
-      digitalWrite(blue,LOW);
-      digitalWrite(green,LOW);
+      digitalWrite(13,LOW);
+      digitalWrite(12,LOW);
       break;
-      
-    case 4:
-      digitalWrite(red1,LOW);
-      digitalWrite(red2,LOW);
-      digitalWrite(blue,HIGH);
-      digitalWrite(green,LOW);
-
-    case 5:
-      digitalWrite(red1,LOW);
-      digitalWrite(red2,HIGH);
-      digitalWrite(blue,LOW);
-      digitalWrite(green,LOW);
   }
     
   
 } 
-
 //ros::Subscriber<geometry_msgs::Twist> sub("/turtle1/cmd_vel", messageCb);
 ros::Subscriber<turtlesim::Pose> sub("/turtle1/pose", poseCb);
-
-
 void setup() {
   // put your setup code here, to run once:
-  pinMode(red1,OUTPUT);
-  pinMode(red2,OUTPUT);
-  pinMode(green,OUTPUT);
-  pinMode(blue,OUTPUT);
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
   nh.initNode();
   nh.subscribe(sub);
-
 }
-
 void loop() {
   // put your main code here, to run repeatedly:
   nh.spinOnce();
