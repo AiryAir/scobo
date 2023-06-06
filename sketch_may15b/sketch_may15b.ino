@@ -13,6 +13,7 @@ float theta = 0;
 float linear = 0;
 float angular = 0;
 int led = 0;
+<<<<<<< HEAD
 int red1 = 13;
 int red2 = 8;
 int blue = 6;
@@ -33,6 +34,8 @@ int green = 12;
 //    Serial.println(demandx);
 //
 //}
+=======
+>>>>>>> parent of bf63d2a (Update sketch_may15b.ino)
 
 void poseCb(const turtlesim::Pose& pose_msg){
   
