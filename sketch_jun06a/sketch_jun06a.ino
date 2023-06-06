@@ -4,43 +4,19 @@
 
 ros::NodeHandle nh;
 
-float demandx=0;
-float demandz=0;
-float x = 0;
-float x1 = 0;
-float y = 0;
-float theta = 0;
-float linear = 0;
-float angular = 0;
 int led = 0;
 int red1 = 13;
 int red2 = 8;
 int blue = 6;
 int green = 12;
 
-//void messageCb(const geometry_msgs::Twist& twist){
-//  
-//    demandx = twist.linear.x;
-//    demandz = twist.angular.z;
-//    
-//    if(demandx >= 0){
-//    digitalWrite(13,HIGH);
-//    }
-//    
-//    else {
-//    digitalWrite(13,LOW);
-//    }
-//    Serial.println(demandx);
-//
-//}
-
 void poseCb(const turtlesim::Pose& pose_msg){
   
-  x = pose_msg.x;
-  y = pose_msg.y;
-  theta = pose_msg.theta;
-  linear = pose_msg.linear_velocity;
-  angular = pose_msg.angular_velocity;
+  float x = pose_msg.x;
+  float y = pose_msg.y;
+  float theta = pose_msg.theta;
+  float linear = pose_msg.linear_velocity;
+  float angular = pose_msg.angular_velocity;
 
   if(linear == 0 && angular == 0){
     led = 1;
@@ -56,9 +32,6 @@ void poseCb(const turtlesim::Pose& pose_msg){
   }
   else if(linear == 0 && angular < 0){
     led = 5;
-  }
-  else{
-    led = 6;
   }
 
   switch(led){

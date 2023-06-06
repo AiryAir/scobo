@@ -35,7 +35,7 @@ void poseCb(const geometry_msgs::Twist& twist){
   else if(linear != 0 && angular !=0){
     led = 3;
   }
-  else{
+  else if(linear ==0 && angular ==0){
     led = 4;
   }
 
@@ -62,7 +62,7 @@ void poseCb(const geometry_msgs::Twist& twist){
   }
 } 
 
-ros::Subscriber<geometry_msgs::Twist> sub("/cmd_vel", poseCb);
+ros::Subscriber<geometry_msgs::Twist> sub("turtle1/cmd_vel", poseCb);
 
 
 void setup() {
