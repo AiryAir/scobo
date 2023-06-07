@@ -35,8 +35,8 @@ void poseCb(const geometry_msgs::Twist& twist){
   float lwheel = (2*linear) - (angular*30)/(2*5);
 
   // pwm value for left and right wheels
-  rp = round(rwheel*180/0.22);
-  lp = round(lwheel*180/2.84);
+  rp = round(rwheel*250/0.22);
+  lp = round(lwheel*250/2.84);
 
 
   // forward, inplace R,L, forward R,L
