@@ -208,7 +208,7 @@
  
    puts("Reading from keyboard");
    puts("---------------------------");
-   puts("Use arrow keys to move the turtle. 'q' to quit.");
+   puts("Use arrow keys to move the turtle. 'c' to stop movement,'q' to quit.");
  
  
    for(;;)
@@ -232,23 +232,32 @@
        case KEYCODE_LEFT:
          ROS_DEBUG("LEFT");
          angular_ = 1.0;
+         linear_ = 0.0;
+         
          dirty = true;
          break;
        case KEYCODE_RIGHT:
          ROS_DEBUG("RIGHT");
          angular_ = -1.0;
+         linear_ = 0.0;
          dirty = true;
          break;
        case KEYCODE_UP:
          ROS_DEBUG("UP");
          linear_ = 1.0;
+         angular_ = 0.0;
          dirty = true;
          break;
        case KEYCODE_DOWN:
          ROS_DEBUG("DOWN");
          linear_ = -1.0;
+         angular_ = 0.0
          dirty = true;
          break;
+       case KEYCODE_C:
+         ROS_DEBUG("STOP"):
+         linear_ = 0.0;
+         angular_ = 0.0;
        case KEYCODE_Q:
          ROS_DEBUG("quit");
          return;
