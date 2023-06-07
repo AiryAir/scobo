@@ -10,11 +10,13 @@ float linear = 0;
 float angular = 0;
 int mov = 0;
 
+// l298n pins
 int in1 = 10;
 int in2 = 11;
 int in3 = 12;
 int in4 = 9;
 
+// high low (unused)
 int h = 255;
 int l = 100 ;
 
@@ -26,10 +28,13 @@ void poseCb(const geometry_msgs::Twist& twist){
   linear = twist.linear.x;
   angular = twist.angular.z;
 
+  // individual wheel velocities
+  // R = 2V - wL/2R
+  // L = 2V + wL/2R
   float rwheel = (2*linear) - (angular*30)/(2*5);
   float lwheel = (2*linear) - (angular*30)/(2*5);
 
-
+  // pwm value for left and right wheels
   rp = round(rwheel*180/0.22);
   lp = round(lwheel*180/2.84);
 
@@ -42,7 +47,7 @@ void poseCb(const geometry_msgs::Twist& twist){
   //reverse, back right, back left
   else if(linear <= 0 && angular <= 0){
     mov = 2;
-
+  }
 
   switch(mov){
 
@@ -64,6 +69,7 @@ void poseCb(const geometry_msgs::Twist& twist){
       analogWrite(in4,rp);
       break;
 
+    // default stop
     default:
       analogWrite(in1,0);
       analogWrite(in3,0);
