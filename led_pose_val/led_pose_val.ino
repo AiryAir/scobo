@@ -16,12 +16,6 @@ int y = 11;
 int r = 10;
 
 void poseCb(const geometry_msgs::Twist& twist){
-  
-//  x = pose_msg.x;
-//  y = pose_msg.y;
-//  theta = pose_msg.theta;
-//  linear = pose_msg.linear_velocity;
-//  angular = pose_msg.angular_velocity;
 
   linear = twist.linear.x;
   angular = twist.angular.z;
@@ -125,9 +119,5 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   nh.spinOnce();
-//  Serial.println("linear = ");
-//  Serial.print(linear);
-//  Serial.println("angular = ");
-//  Serial.print(angular);
   delay(50);
 }
