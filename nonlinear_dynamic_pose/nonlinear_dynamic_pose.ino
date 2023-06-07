@@ -21,7 +21,7 @@ int h = 255;
 int l = 100 ;
 
 int lp = 0;
-int ap = 0;
+int rp = 0;
 
 void poseCb(const geometry_msgs::Twist& twist){
 
