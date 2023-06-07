@@ -13,7 +13,7 @@ int led = 0;
 int m1a = 10;
 int m1b = 11;
 int m2a = 12;
-int m2b = 13;
+int m2b = 9;
 
 void poseCb(const geometry_msgs::Twist& twist){
 
@@ -70,11 +70,11 @@ void poseCb(const geometry_msgs::Twist& twist){
       break;
 
     case 4:
-      digitalWrite(m1a,LOW);
+      digitalWrite(m1a,HIGH);
       digitalWrite(m1b,LOW);
       
       digitalWrite(m2a,LOW);
-      digitalWrite(m2b,LOW);
+      digitalWrite(m2b,HIGH);
       break;
       
     case 5:
@@ -103,7 +103,7 @@ void poseCb(const geometry_msgs::Twist& twist){
   }
 } 
 
-ros::Subscriber<geometry_msgs::Twist> sub("/cmd_vel", poseCb);
+ros::Subscriber<geometry_msgs::Twist> sub("/key_vel", poseCb);
 
 
 void setup() {
