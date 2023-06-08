@@ -20,8 +20,11 @@ int in4 = 9;
 int h = 255;
 int l = 100 ;
 
-int lp = 0;
-int rp = 0;
+float lp = 0;
+float rp = 0;
+
+float lwheel = 0;
+float rwheel = 0;
 
 void poseCb(const geometry_msgs::Twist& twist){
 
@@ -31,12 +34,15 @@ void poseCb(const geometry_msgs::Twist& twist){
   // individual wheel velocities
   // R = 2V - wL/2R
   // L = 2V + wL/2R
-  float rwheel = (2*linear) - (angular*30)/(2*5);
-  float lwheel = (2*linear) - (angular*30)/(2*5);
+  rwheel = (2*linear) - (angular*30)/(2*5);
+  lwheel = (2*linear) + (angular*30)/(2*5);
+
+  rwheel = ceil(rwheel*1000)/1000;
+  lwheel = ceil(lwheel*1000)/1000;
 
   // pwm value for left and right wheels
-  rp = round(rwheel*250/0.22);
-  lp = round(lwheel*250/2.84);
+  rp = abs(round(rwheel*250/0.44));
+  lp = abs(round(lwheel*250/0.44));
 
 
   // forward, inplace R,L, forward R,L
@@ -47,6 +53,12 @@ void poseCb(const geometry_msgs::Twist& twist){
   //reverse, back right, back left
   else if(linear <= 0 && angular <= 0){
     mov = 2;
+  }
+  else if(linear <= 0 && angular >= 0){
+    mov = 3;
+  }
+  else if(linear >= 0 && angular <= 0){
+    mov = 4;
   }
 
   switch(mov){
