@@ -15,8 +15,9 @@ int in2 = 11;
 int in3 = 12;
 int in4 = 9;
 
-int h = 255;
-int l = 100 ;
+int h = 140;
+int h1 = 125;
+int l = 100;
 
 void poseCb(const geometry_msgs::Twist& twist){
 
@@ -60,7 +61,7 @@ void poseCb(const geometry_msgs::Twist& twist){
   }
 
   //reverse left
-  else if(linear > 0 && angular > 0){
+  else if(linear < 0 && angular > 0){
     led = 8;
   }
 
@@ -76,7 +77,7 @@ void poseCb(const geometry_msgs::Twist& twist){
     // forward L, R
     case 1:
       analogWrite(in1,h);
-      analogWrite(in3,h);
+      analogWrite(in3,h1);
       
       analogWrite(in2,0);
       analogWrite(in4,0);
@@ -94,7 +95,7 @@ void poseCb(const geometry_msgs::Twist& twist){
     // inplace right turn
     case 3:
       analogWrite(in1,0);
-      analogWrite(in3,h);
+      analogWrite(in3,h1);
       
       analogWrite(in2,0);
       analogWrite(in4,0);
@@ -122,7 +123,7 @@ void poseCb(const geometry_msgs::Twist& twist){
     // forward left
     case 6:
       analogWrite(in1,l);
-      analogWrite(in3,h);
+      analogWrite(in3,h1);
       
       analogWrite(in2,0);
       analogWrite(in4,0);
