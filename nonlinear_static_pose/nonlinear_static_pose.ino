@@ -95,7 +95,7 @@ void poseCb(const geometry_msgs::Twist& twist){
     // inplace right turn
     case 3:
       analogWrite(in1,0);
-      analogWrite(in3,h1);
+      analogWrite(in3,255);
       
       analogWrite(in2,0);
       analogWrite(in4,0);
@@ -103,7 +103,7 @@ void poseCb(const geometry_msgs::Twist& twist){
 
     // inplace left turn
     case 4:
-      analogWrite(in1,h);
+      analogWrite(in1,255);
       analogWrite(in3,0);
       
       analogWrite(in2,0);
