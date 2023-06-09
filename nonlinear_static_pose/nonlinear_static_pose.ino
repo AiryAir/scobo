@@ -77,7 +77,7 @@ void poseCb(const geometry_msgs::Twist& twist){
     // forward L, R
     case 1:
       analogWrite(in1,h);
-      analogWrite(in3,h1);
+      analogWrite(in3,h);
       
       analogWrite(in2,0);
       analogWrite(in4,0);
