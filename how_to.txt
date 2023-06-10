@@ -10,6 +10,20 @@ source devel/setup.bash
 rosrun rosserial_arduino serial_node.py /dev/ttyACM0
 
 --------------------------------------------
+SIMULATION
+
+
+export TURTLEBOT3_MODEL=burger
+
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+rosrun map_server map_server ~/catkin_ws/src/turtlebot3/turtlebot3_navigation/maps/map.yaml
+
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/pratham/catkin_ws/src/turtlebot3/turtlebot3_navigation/maps/map.yaml
+
+--------------------------------------------
 
 MAPPING REAL TIME
 
