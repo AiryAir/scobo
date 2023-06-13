@@ -1,0 +1,9 @@
+roscore
+roslaunch rplidar_ros rplidar.launch
+roslaunch hector_slam_launch tutorial.launch
+
+export TURTLEBOT3_MODEL=waffle
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch
+
+rosrun map_server map_server /home/pratham/catkin_ws/floor1.yaml
+
