@@ -42,6 +42,7 @@
   </link>
 
   <!--CHANGE TO CONTINUOUS-->
+  <!--FIXED removes errors for lack of odom -->
   <joint name="wheel_left_joint" type="fixed">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>
