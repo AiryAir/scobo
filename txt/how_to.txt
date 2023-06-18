@@ -57,3 +57,11 @@ this should launch rviz with laserscan, tf and path topics
 catkin_make --pkg <package> doesnt work, needs to be done for the entire ws folder
 
 ----------------------------------------------
+
+SLAM NODES ALL
+
+roscore
+roslaunch rplidar_ros rplidar.launch
+rosrun map_server map_server ~/catkin_ws/src/turtlebot3/turtlebot3_navigation/maps/map.yaml
+roslaunch hector_slam_launch tutorial.launch
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch
