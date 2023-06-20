@@ -64,8 +64,8 @@ if __name__ == '__main__':
     rospy.init_node('odometry_publisher')
 
     # Replace "left_ticks_topic" and "right_ticks_topic" with your actual encoder tick topics
-    rospy.Subscriber('left_ticks_topic', int, encoder_ticks_callback)
-    rospy.Subscriber('right_ticks_topic', int, encoder_ticks_callback)
+    rospy.Subscriber('left_ticks_topic', int, left_ticks_callback)
+    rospy.Subscriber('right_ticks_topic', int, right_ticks_callback)
 
     odom_publisher = rospy.Publisher('odom', Odometry, queue_size=10)
 
