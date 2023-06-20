@@ -1,8 +1,7 @@
-#define encoder0PinA 18      // encoder 1
-#define encoder0PinB 19
-
-#define encoder1PinA 20     // encoder 2
-#define encoder1PinB 21
+#define encoder0PinA 30      // encoder 1
+#define encoder0PinB 32
+#define encoder1PinA 40      // encoder 2
+#define encoder1PinB 42
 
 unsigned long currentMillis;
 unsigned long previousArmMillis;
@@ -13,7 +12,7 @@ volatile long encoder1Pos = 0;    // encoder 2
 
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(57600);
   pinMode(encoder0PinA, INPUT_PULLUP);    // encoder pins
   pinMode(encoder0PinB, INPUT_PULLUP);
 
