@@ -7,10 +7,10 @@
 // Pin Definitions
 const int leftEn = 8;           // Purple
 const int rightEn = 9;          // Red
-const int leftBackward = 5;      // Blue
-const int leftForward = 4;       // Green IN1
-const int rightForward = 6;     // Yellow
-const int rightBackward = 7;    // Orange
+const int leftBackward = 7;      // Blue
+const int leftForward = 6;       // Green IN1
+const int rightForward = 4;     // Yellow
+const int rightBackward = 5;    // Orange
 #define ENC_IN_LEFT_A 18
 #define ENC_IN_RIGHT_A 20
 
@@ -26,6 +26,7 @@ const int encoder_minimum = -16192;
 const int encoder_maximum = 16192;
 
 int pwm_max = 255;
+int pwm_ctrl = 0;
 int pwm_min = 25;
 int high_pwm = 41;
 int low_pwm = 32;
@@ -160,7 +161,7 @@ void stop() {
 
 void forward() {
   Serial.println("Forward");
-  analogWrite(leftEn, mapped_speed_forward);
+  analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
   analogWrite(rightEn, mapped_speed_forward);
   digitalWrite(leftForward, HIGH);
   digitalWrite(rightForward, HIGH);
@@ -170,7 +171,7 @@ void forward() {
 
 void backward() {
   Serial.println("Backward");
-  analogWrite(leftEn, mapped_speed_backward);
+  analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
   analogWrite(rightEn, mapped_speed_backward);
   digitalWrite(leftForward, LOW);
   digitalWrite(rightForward, LOW);
@@ -180,7 +181,7 @@ void backward() {
 
 void left() {
   Serial.println("Left");
-  analogWrite(leftEn, mapped_speed_left);
+  analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
   analogWrite(rightEn, mapped_speed_left);
   digitalWrite(leftForward, LOW);
   digitalWrite(leftBackward, LOW);
@@ -190,7 +191,7 @@ void left() {
 
 void right() {
   Serial.println("Right");
-  analogWrite(leftEn, mapped_speed_right);
+  analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
   analogWrite(rightEn, mapped_speed_right);
   digitalWrite(leftForward, HIGH);
   digitalWrite(leftBackward, LOW);
@@ -200,7 +201,7 @@ void right() {
 
 void forwardright() {
   Serial.println("Forward Right");
-  analogWrite(leftEn, high_pwm);
+  analogWrite(leftEn, high_pwm-pwm_ctrl);
   analogWrite(rightEn, low_pwm);
   digitalWrite(leftForward, HIGH);
   digitalWrite(leftBackward, LOW);
@@ -220,7 +221,7 @@ void forwardleft() {
 
 void backwardright() {
   Serial.println("Backward Right");
-  analogWrite(leftEn, high_pwm);
+  analogWrite(leftEn, high_pwm-pwm_ctrl);
   analogWrite(rightEn, low_pwm);
   digitalWrite(leftForward, LOW);
   digitalWrite(leftBackward, HIGH);
