@@ -8,9 +8,9 @@ import math
 import tf
 
 # Constants for wheelbase, ticks per revolution, and wheel radius
-WHEELBASE = 0.5  # Example value, replace with your actual wheelbase
-TICKS_PER_REV = 360  # Example value, replace with your actual ticks per revolution
-WHEEL_RADIUS = 0.1  # Example value, replace with your actual wheel radius
+WHEELBASE = 0.28  # Example value, replace with your actual wheelbase
+TICKS_PER_REV = 210  # Example value, replace with your actual ticks per revolution
+WHEEL_RADIUS = 0.035  # Example value, replace with your actual wheel radius
 
 # Variables to store previous encoder tick values
 prev_left_ticks = 0

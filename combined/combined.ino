@@ -25,11 +25,11 @@ boolean Direction_right = true;
 const int encoder_minimum = -16192;
 const int encoder_maximum = 16192;
 
-int pwm_max = 255;
+int pwm_max = 200;
 int pwm_ctrl = 0;
-int pwm_min = 25;
-int high_pwm = 41;
-int low_pwm = 32;
+int pwm_min = 180;
+int high_pwm = 200;
+int low_pwm = 180;
 int mapped_speed_forward;
 int mapped_speed_backward;
 int mapped_speed_right;
