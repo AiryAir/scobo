@@ -254,7 +254,7 @@ class SimpleKeyTeleop():
 
 
 def main(stdscr):
-    rospy.init_node('key_teleop')
+    rospy.init_node('cmd_vel')
     app = SimpleKeyTeleop(TextWindow(stdscr))
     app.run()
 
