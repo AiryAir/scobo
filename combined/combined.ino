@@ -18,8 +18,8 @@ const int rightBackward = 5;    // Orange
 #define ENC_IN_RIGHT_B 21
 
 // True = Forward; False = Reverse
-boolean Direction_left = false;
-boolean Direction_right = false;
+boolean Direction_left = true;
+boolean Direction_right = true;
  
 // Minumum and maximum values for 16-bit integers
 const int encoder_minimum = -16192;
