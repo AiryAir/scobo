@@ -5,8 +5,8 @@
 
 // IN1 IN2 Wheeled 
 // Pin Definitions
-const int leftEn = 8;           // Purple
-const int rightEn = 9;          // Red
+const int leftEn = 2;           // Purple
+const int rightEn = 3;          // Red
 const int leftBackward = 7;      // Blue
 const int leftForward = 6;       // Green IN1
 const int rightForward = 4;     // Yellow
