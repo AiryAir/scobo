@@ -1,6 +1,6 @@
-#define encoder0PinA 30      // encoder 1
+#define encoder0PinA 30      // encoder 1 chA
 #define encoder0PinB 32
-#define encoder1PinA 40      // encoder 2
+#define encoder1PinA 40      // encoder 2 chA
 #define encoder1PinB 42
 
 unsigned long currentMillis;
