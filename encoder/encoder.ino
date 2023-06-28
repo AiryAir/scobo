@@ -5,12 +5,12 @@
 ros::NodeHandle nh;
  
 // Encoder output to Arduino Interrupt pin. Tracks the tick count.
-#define ENC_IN_LEFT_A 2
+#define ENC_IN_LEFT_A 20
 #define ENC_IN_RIGHT_A 6
  
 // Other encoder output to Arduino to keep track of wheel direction
 // Tracks the direction of rotation.
-#define ENC_IN_LEFT_B 3
+#define ENC_IN_LEFT_B 21
 #define ENC_IN_RIGHT_B 7
  
 // True = Forward; False = Reverse
