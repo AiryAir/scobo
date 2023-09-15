@@ -184,7 +184,7 @@ void left() {
   analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
   analogWrite(rightEn, mapped_speed_left);
   digitalWrite(leftForward, LOW);
-  digitalWrite(leftBackward, LOW);
+  digitalWrite(leftBackward, HIGH);
   digitalWrite(rightForward, HIGH);
   digitalWrite(rightBackward, LOW);
 }
@@ -196,7 +196,7 @@ void right() {
   digitalWrite(leftForward, HIGH);
   digitalWrite(leftBackward, LOW);
   digitalWrite(rightForward, LOW);
-  digitalWrite(rightBackward, LOW);
+  digitalWrite(rightBackward, HIGH);
 }
 
 void forwardright() {
