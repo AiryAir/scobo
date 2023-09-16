@@ -5,17 +5,17 @@
 
 // IN1 IN2 Wheeled 
 // Pin Definitions
-const int leftEn = 2;           // Purple
-const int rightEn = 3;          // Red
-const int leftBackward = 7;      // Blue
+const int leftEn = 9;           // Purple
+const int rightEn = 10;          // Red
+const int leftBackward = 5;      // Blue
 const int leftForward = 6;       // Green IN1
-const int rightForward = 4;     // Yellow
-const int rightBackward = 5;    // Orange
-#define ENC_IN_LEFT_A 18
-#define ENC_IN_RIGHT_A 20
+const int rightForward = 8;     // Yellow
+const int rightBackward = 7;    // Orange
+#define ENC_IN_LEFT_A 3
+#define ENC_IN_RIGHT_A 2
 
-#define ENC_IN_LEFT_B 19
-#define ENC_IN_RIGHT_B 21
+#define ENC_IN_LEFT_B 11
+#define ENC_IN_RIGHT_B 4
 
 // True = Forward; False = Reverse
 boolean Direction_left = true;
