@@ -161,8 +161,8 @@ void stop() {
 
 void forward() {
   Serial.println("Forward");
-  analogWrite(leftEn, mapped_speed_forward-pwm_ctrl);
-  analogWrite(rightEn, mapped_speed_forward);
+  analogWrite(leftEn, 110);
+  analogWrite(rightEn, 110);
   digitalWrite(leftForward, HIGH);
   digitalWrite(rightForward, HIGH);
   digitalWrite(leftBackward, LOW);
