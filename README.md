@@ -4,12 +4,8 @@ SCOBO, is a medical robot made to revolutionizes healthcare. It can navigate thr
 UVC disinfection maintains a clean environment, while video calling connects patients with doctors for remote consultations. This innovation improves patient outcomes, tackles staffing challenges, and  promises a more efficient and patient-focused healthcare future.
 
 # Index
-* Tech Stack
+* Tech Stack - Software & Hardware
 * Features
-* Dataset Description
-* Training Results
-* Authors
-* License
 
 # Tech Stack
 
