@@ -42,3 +42,10 @@ SCOBO offers the following key features:
 * UV Disinfection: The underside of the chassis has UV-Lights mounted to clean an area as the robot moves around.
   
 # Images
+
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/full_unlabeled.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/full_labeled.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/pan_tilt.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/pill_disp.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/side_elec.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/side_elec.jpg )
