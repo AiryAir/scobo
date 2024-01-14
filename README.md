@@ -1,4 +1,5 @@
-# SCOBO: The Medical Robot
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/Frame%2023.png )
+# SCOBO: The Medical Bot
 SCOBO, is a medical robot made to revolutionizes healthcare. It can navigate through hospitals, automating medication & patient parameter monitoring, to reduce errors and contamination risks. 
 UVC disinfection maintains a clean environment, while video calling connects patients with doctors for remote consultations. This innovation improves patient outcomes, tackles staffing challenges, and  promises a more efficient and patient-focused healthcare future.
 
