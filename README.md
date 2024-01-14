@@ -44,4 +44,4 @@ SCOBO offers the following key features:
 ![img src]( https://github.com/AiryAir/scobo/blob/main/images/pan_tilt.jpg )
 ![img src]( https://github.com/AiryAir/scobo/blob/main/images/pill_disp.jpg )
 ![img src]( https://github.com/AiryAir/scobo/blob/main/images/side_elec.jpg )
-![img src]( https://github.com/AiryAir/scobo/blob/main/images/side_elec.jpg )
+![img src]( https://github.com/AiryAir/scobo/blob/main/images/back_elec.jpg )
